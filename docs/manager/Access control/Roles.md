@@ -7,6 +7,7 @@ sidebar_position: 1
 # Roles
 
 Roles help to manage permissions by delineating which users can access different areas of the dashboard. During the installation of the dashboard, a default role that has all permissions is created. More roles can be created as needed and assigned specific permissions to view an indicator. This allows you to customize access to a group of users.
+
 There are a few different ways to define roles for the dashboard. One common method is to use job titles, such as Supervisor, and Manager. Another method is to use departments, such as Mapping, IT or Methodology. Once you have defined the roles, you can then assign permission to view indicators having these users in mind.
 
 :::info
