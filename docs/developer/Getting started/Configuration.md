@@ -1,5 +1,6 @@
 ---
 sidebar_position: 5
+slug: ../getting-started/configuration
 ---
 
 # Configuration
@@ -34,6 +35,18 @@ You also need to set up the mail server details if you have access to the Intern
 
 ### Dashboard features
 The following are other environment variables you can set to affect various aspects of the dashboard. 
+- APP_OWNER_NAME=ECA
+
+    set this to the organization that owns the dashboard. Used in the footer displayed across all pages (default ECA)
+
+- APP_OWNER_URL=#
+
+    set this to the URL (website) of the organization that owns the dashboard. Used in the footer displayed across all pages (default #)
+
+- APP_TIMEZONE=UTC
+
+    set this to the timezone of where the census/survey exercise is taking place (default UTC)
+
 - SECURE=false
     
     set this to true or false depending on whether you have https enabled on your dashboard web server (default false)
@@ -54,6 +67,10 @@ The following are other environment variables you can set to affect various aspe
     
     set this to the number of hours you want user registration links to be valid for (default 72)
 
+- REQUIRE_ACCOUNT_APPROVAL=false
+
+    set this to true to require that all accounts get approval from dashboard manager before they can be used (default false)
+
 - RECORDS_PER_PAGE=20
     
     set this to an integer number which controls the number of rows shown in various tables of the dashboard (default 20)
@@ -66,6 +83,17 @@ The following are other environment variables you can set to affect various aspe
     
     set this to the longitude of the map which is first panned into view when map is loaded (default 38.763611)
 
+- IGNORE_ORPHAN_AREAS
+
+    this relates to importing areas from shapefiles. In that process, areas in one level are automatically linked with areas in
+    the previous level by using spatial queries. If your shapefiles are not exact, it might happen that an area fails to find a
+    containing or parent area. In such cases, set the value of this constant to true to instruct the importer to ignore (and continue)
+    areas that are orphans (default false)
+
 - CACHE_ENABLED=false
     
     set this to true or false to enable data caching (default false)
+
+- CACHE_TTL_SECONDS=3600
+
+    set this to the number of seconds that you want database query results to be cached. This has effect only if CACHE_ENABLED is set to true (default 60 * 60)

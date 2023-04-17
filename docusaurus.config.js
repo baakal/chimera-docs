@@ -25,7 +25,12 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'fr'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-US',
+      }
+    }
   },
 
   presets: [
@@ -84,33 +89,22 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Home',
+        title: 'Docs',
         logo: {
           alt: 'Dashboard Starter Kit',
           src: 'img/logo.png',
         },
         items: [
-          // {
-          //   type: 'doc',
-          //   docId: 'intro',
-          //   position: 'left',
-          //   label: 'Users',
-          //   sidebarId: 'user',
-          // },
-          // {
-          //   type: 'doc',
-          //   docId: 'intro',
-          //   position: 'left',
-          //   label: 'Developers',
-          //   docsPluginId: 'developer',
-          //   sidebarId: 'developer',
-          // },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/tech-acs/chimera-starter-kit',
             label: 'GitHub',
             position: 'right',
           },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          }
         ],
       },
       footer: {
